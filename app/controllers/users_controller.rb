@@ -6,20 +6,28 @@ class UsersController < ApplicationController
   end
 
   def create
-    @random_number = rand(2000)
     puts params
     puts "Token: #{params[:authenticity_token]}"
-    puts "random_number create= #{@random_number}"
     @user = User.create(username: params[:username] , bio: params[:bio])
+    if @user
+      redirect_to action: 'show', id: @user.id
+        else redirect_to 'new'
+      end
+
     puts @user.username
-    puts "on affiche depuis create "
-    redirect_to '/'
+    puts "on affiche depuis create"
+    
+  end
+
+  def validate?
+
   end
 
   def show
+    puts Time.now
     puts "j'affiche depuis show"
-    puts params[:id]
-    @user = User.last
+    puts "numéro de l'id #{params[:id].to_i}"
+    @user = User.find(params[:id].to_i)
   end
 
 end
