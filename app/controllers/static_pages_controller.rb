@@ -14,8 +14,13 @@ class StaticPagesController < ApplicationController
     puts "random number about: #{@random_number}"
   end
 
-  def mon_groupe
+  def about_user
     @random_number =rand(1000)
-    puts "random number mon_groupe: #{@random_number}"
+    puts "random number about_user: #{@random_number}"
+  end
+
+  def about_group
+    @random_number =rand(1000)
+    puts "random number about_group: #{@random_number}"
   end
 end
