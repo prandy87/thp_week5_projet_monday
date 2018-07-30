@@ -1,11 +1,5 @@
 <h1>Create your profile :</h1>
 
-<% if @user.invalid? %>
-  <div class ="alert alert_danger">
-    <% @user.errors.full_messages.each do |message|
-      <%= message %>
-  </div>
-<% end %>
 
 <form action="/create" method="post">
 	name:<br>
