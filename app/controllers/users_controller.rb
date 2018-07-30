@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     user = User.create(username: params[:username] , bio: params[:bio])
     puts user.username
     puts "on affiche depuis create "
+    redirect_to'/'
   end
 
 end
