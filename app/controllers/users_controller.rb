@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    puts params
+    puts params.inspect
     puts "Token: #{params[:authenticity_token]}"
     @user = User.create(username: params[:username], bio:params[:bio])
     if @user.save
